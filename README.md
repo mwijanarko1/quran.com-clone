@@ -1,119 +1,222 @@
-# Mikhail Builds Website Template for Beginners
+# Quran.com Clone
 
-A modern, beginner-friendly Next.js template designed for rapid web development with Cursor IDE integration.
+A modern, comprehensive Quran reading platform inspired by Quran.com. Built with Next.js, TypeScript, and Tailwind CSS to provide Muslims worldwide with easy access to the Holy Quran.
+
+## 📖 About
+
+This project is a faithful recreation of Quran.com's interface and functionality, offering:
+
+- **Complete Quran Text**: All 114 Surahs with Arabic text
+- **Beautiful Reading Experience**: Clean, distraction-free interface
+- **Multiple Translations**: Support for various translation languages
+- **Audio Recitations**: Audio playback functionality
+- **Search & Navigation**: Powerful search and easy navigation
+- **Responsive Design**: Works seamlessly on all devices
+- **Free & Open Source**: No monetization, purely for Islamic benefit
 
 ## 🚀 Tech Stack
 
 - **Framework**: Next.js 16 with App Router
 - **Language**: TypeScript for type safety
-- **Styling**: Tailwind CSS v4 with custom animations
-- **Development**: Turbopack for fast builds
-- **Linting**: ESLint with Next.js configuration
-- **Build Tool**: PostCSS with Autoprefixer
+- **UI Library**: ShadCN/UI components
+- **Styling**: Tailwind CSS v4
+- **Data Source**: Static Quran data (quran.json)
+- **State Management**: React hooks
+- **Icons**: Custom SVG icons
 
 ## ✨ Features
 
-- **Modern UI Components**: Pre-built Hero component with animated gradient backgrounds
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **TypeScript Support**: Full type checking and IntelliSense
-- **Custom Animations**: Blob animations and smooth transitions
-- **Developer Experience**: Optimized with Turbopack for lightning-fast development
-- **Cursor IDE Integration**: Designed to work seamlessly with Cursor's AI agent
+### 📚 Reading Experience
+- **Arabic Text Display**: Beautiful Uthmani script rendering
+- **Translation Toggle**: Switch between Arabic-only and translation view
+- **Verse-by-Verse Reading**: Clear verse separation and numbering
+- **Bismillah Display**: Properly shown where applicable (except Surah At-Tawbah)
+
+### 🧭 Navigation
+- **Surah Navigation**: Browse all 114 Surahs with search
+- **Verse Linking**: Direct links to specific verses
+- **Context Menu**: Shows current Surah and reading position
+- **Quick Access**: Popular Surahs and verses shortcuts
+
+### 🔍 Search & Discovery
+- **Global Search**: Search across Arabic text and translations
+- **Surah Search**: Find Surahs by name or number
+- **Popular Surahs**: Highlighted frequently read chapters
+
+### 🎵 Audio Features
+- **Audio Player**: Built-in recitation playback
+- **Reciter Selection**: Multiple reciter options
+- **Verse Audio**: Play individual verses or entire Surahs
+
+### 📱 User Experience
+- **Responsive Design**: Optimized for mobile, tablet, and desktop
+- **Dark/Light Themes**: Multiple theme options
+- **Accessibility**: Screen reader friendly, keyboard navigation
+- **Fast Loading**: Optimized performance with static data
+
+### 🛠 Developer Features
+- **Type Safety**: Full TypeScript implementation
+- **Component Architecture**: Modular, reusable components
+- **SEO Optimized**: Proper meta tags and structured data
+- **Static Generation**: Fast loading with pre-rendered pages
 
 ## 🛠 Getting Started
 
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
-- [Cursor IDE](https://cursor.sh/) (recommended)
+- npm or yarn package manager
 
 ### Installation
 
-1. **Download Cursor IDE**
-   - Visit [cursor.sh](https://cursor.sh/) and download the latest version
-
-2. **Clone the repository**
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/mwijanarko1/template.git
-   cd template
+   git clone <repository-url>
+   cd quran.com-clone
    ```
 
-3. **Install dependencies**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-4. **Start the development server**
+3. **Start the development server**
    ```bash
    npm run dev
    ```
 
-5. **Open Cursor Composer**
-   - Press `CMD + I` to open the Composer
-   - Make sure to select the "Agent" mode
-
-6. **Use the AI Agent**
-   - Copy the contents of the `PROMPT.txt` file and paste it into the Composer Agent
-   - Let the AI generate your project structure and components
-   - Chat with the agent to build features - it will handle the coding for you
-
-7. **Fix any issues**
-   - If errors occur, copy/paste the error or screenshot it
-   - Ask the agent to fix the specific error
+4. **Open your browser**
+   - Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📁 Project Structure
 
 ```
-template/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx          # Root layout component
-│   │   ├── page.tsx           # Home page
-│   │   ├── globals.css        # Global styles
-│   │   └── favicon.ico        # App favicon
-│   └── components/
-│       └── Hero.tsx           # Hero section component
-├── tailwind.config.js         # Tailwind CSS configuration
-├── next.config.mjs           # Next.js configuration
-├── postcss.config.mjs        # PostCSS configuration
-├── eslint.config.mjs         # ESLint configuration
-└── package.json              # Dependencies and scripts
+src/
+├── app/                          # Next.js App Router
+│   ├── [chapterId]/             # Dynamic Surah pages
+│   │   └── page.tsx
+│   ├── layout.tsx               # Root layout
+│   ├── page.tsx                 # Homepage
+│   └── globals.css              # Global styles
+├── components/                  # React components
+│   ├── layout/                  # Layout components
+│   │   ├── Navbar.tsx          # Main navigation
+│   │   ├── Footer.tsx          # Site footer
+│   │   ├── NavigationDrawer.tsx # Mobile navigation
+│   │   ├── SearchDrawer.tsx     # Search interface
+│   │   └── SettingsDrawer.tsx   # Settings panel
+│   └── quran/                   # Quran-specific components
+│       ├── QuranReader.tsx     # Main reader component
+│       ├── ChapterHeader.tsx   # Surah header
+│       ├── VerseDisplay.tsx    # Individual verse display
+│       ├── VerseActions.tsx    # Verse action buttons
+│       └── ReadingPreferenceSwitcher.tsx
+├── data/                       # Static data files
+│   └── quran.json              # Complete Quran data
+├── lib/                        # Utility functions
+│   ├── quran-data.ts           # Data access layer
+│   └── utils.ts                # Helper functions
+├── types/                      # TypeScript definitions
+│   └── quran.ts                # Quran data types
+└── components/ui/              # ShadCN UI components
 ```
 
-## 🎨 Customization
+## 🎨 Design Philosophy
 
-### Styling
-- Modify `tailwind.config.js` to add custom colors, fonts, or animations
-- Update `src/app/globals.css` for global styles
-- Components use Tailwind utility classes for easy customization
+This clone maintains the clean, Islamic aesthetic of Quran.com:
 
-### Components
-- Add new components in `src/components/`
-- Import and use them in your pages
-- Follow the existing Hero component pattern
+- **Minimalist Interface**: Focus on the Quran text without distractions
+- **Islamic Color Palette**: Greens, whites, and subtle accents
+- **Typography**: Proper Arabic font rendering
+- **Accessibility**: WCAG compliant design
+- **Mobile-First**: Optimized for mobile reading experience
+
+## 🔧 Configuration
+
+### Environment Variables
+
+The app uses static data, so no environment variables are required for basic functionality.
+
+### Customization Options
+
+- **Themes**: Light, Dark, Sepia modes
+- **Font Sizes**: Small, Medium, Large options
+- **Reading Modes**: Translation or Reading view
+- **Audio Settings**: Reciter selection and playback speed
 
 ## 🚀 Deployment
 
 ### Build for Production
+
 ```bash
 npm run build
 ```
 
 ### Start Production Server
+
 ```bash
 npm start
 ```
 
-The template is ready to deploy to Vercel, Netlify, or any other hosting platform that supports Next.js.
+### Deployment Platforms
+
+This app can be deployed to:
+- **Vercel** (recommended for Next.js)
+- **Netlify**
+- **Railway**
+- **AWS Amplify**
+- Any platform supporting Next.js
 
 ## 🤝 Contributing
 
-This template is designed to be extended and customized. Feel free to:
-- Add new components
-- Modify the styling
-- Extend functionality
-- Share your improvements
+We welcome contributions to improve this Quran reading platform:
+
+1. **Fork the repository**
+2. **Create a feature branch**
+3. **Make your changes**
+4. **Test thoroughly**
+5. **Submit a pull request**
+
+### Areas for Contribution
+
+- **Additional Translations**: Add more language translations
+- **Audio Integration**: Improve audio playback features
+- **Tafsir Integration**: Add scholarly explanations
+- **Search Enhancement**: Improve search functionality
+- **Accessibility**: Enhance screen reader support
+- **Performance**: Optimize loading and rendering
+
+## 📊 Performance
+
+- **Static Data**: No API calls, instant loading
+- **Code Splitting**: Automatic route-based splitting
+- **Optimized Images**: Next.js Image component
+- **PWA Ready**: Can be converted to Progressive Web App
+
+## 🔒 Security & Privacy
+
+- **No User Data Collection**: Completely anonymous usage
+- **No Tracking**: No analytics or tracking scripts
+- **Static Content**: No server-side processing
+- **HTTPS Only**: Secure connections only
 
 ## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is dedicated to the Muslim Ummah and is provided as a free, open-source resource under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- **Quran.com**: Original inspiration and design reference
+- **Quran.Foundation**: Supporting Islamic technology projects
+- **All Contributors**: Thanks to everyone helping make Islamic knowledge accessible
+
+## 📞 Support
+
+For questions, suggestions, or issues:
+- Create an issue on GitHub
+- Contact the maintainers
+- Join the discussion in Islamic developer communities
+
+---
+
+**Note**: This is an independent project not affiliated with Quran.com or Quran.Foundation. It aims to provide similar functionality as a free, open-source alternative.
