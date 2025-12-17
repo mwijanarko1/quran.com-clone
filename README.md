@@ -1,17 +1,41 @@
 # Quran.com Clone
 
-A modern, comprehensive Quran reading platform inspired by Quran.com. Built with Next.js, TypeScript, and Tailwind CSS to provide Muslims worldwide with easy access to the Holy Quran.
+> A modern, comprehensive Quran reading platform inspired by Quran.com. Built with Next.js, TypeScript, and Tailwind CSS to provide Muslims worldwide with easy access to the Holy Quran.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-blue)](https://tailwindcss.com/)
 
 ## 📖 About
 
-This project is a faithful recreation of Quran.com's interface and functionality, offering:
+This project is a faithful recreation of Quran.com's interface and functionality. **Current Status: Core Reading Features Complete** ✅
 
-- **Complete Quran Text**: All 114 Surahs with Arabic text
+### What's Implemented:
+- Complete Quran text with Arabic script (Uthmani)
+- English and Indonesian translations
+- Responsive navigation and search
+- Chapter/Surah reading interface
+- Verse actions (copy, bookmark, etc.)
+- Settings and theme controls
+- Mobile-responsive design
+
+### Planned Features:
+- Audio recitation playback
+- Advanced search functionality
+- Tafsir (commentary) integration
+- User accounts and bookmarks
+- Multiple language support
+
+This project offers:
+
+- **Complete Quran Text**: All 114 Surahs with Arabic text (Uthmani script)
+- **Multiple Translations**: English (Saheeh International) and Indonesian translations
 - **Beautiful Reading Experience**: Clean, distraction-free interface
-- **Multiple Translations**: Support for various translation languages
-- **Audio Recitations**: Audio playback functionality
-- **Search & Navigation**: Powerful search and easy navigation
-- **Responsive Design**: Works seamlessly on all devices
+- **Responsive Navigation**: Drawer/sidebar with Surah search and filtering
+- **Verse Actions**: Copy, bookmark, audio controls, and more
+- **Settings Panel**: Theme selection and reading preferences
+- **SEO Optimized**: Proper meta tags and structured data
 - **Free & Open Source**: No monetization, purely for Islamic benefit
 
 ## 🚀 Tech Stack
@@ -20,7 +44,7 @@ This project is a faithful recreation of Quran.com's interface and functionality
 - **Language**: TypeScript for type safety
 - **UI Library**: ShadCN/UI components
 - **Styling**: Tailwind CSS v4
-- **Data Source**: Static Quran data (quran.json)
+- **Data Source**: Static Quran data (quran-complete.json)
 - **State Management**: React hooks
 - **Icons**: Custom SVG icons
 
@@ -71,7 +95,7 @@ This project is a faithful recreation of Quran.com's interface and functionality
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/mwijanarko1/quran.com-clone.git
    cd quran.com-clone
    ```
 
@@ -87,6 +111,9 @@ This project is a faithful recreation of Quran.com's interface and functionality
 
 4. **Open your browser**
    - Navigate to [http://localhost:3000](http://localhost:3000)
+
+### Live Demo
+🌐 **View Live Demo**: [quran-com-clone.vercel.app](https://quran-com-clone.vercel.app) (if deployed)
 
 ## 📁 Project Structure
 
@@ -112,7 +139,7 @@ src/
 │       ├── VerseActions.tsx    # Verse action buttons
 │       └── ReadingPreferenceSwitcher.tsx
 ├── data/                       # Static data files
-│   └── quran.json              # Complete Quran data
+│   └── quran-complete.json     # Complete Quran data
 ├── lib/                        # Utility functions
 │   ├── quran-data.ts           # Data access layer
 │   └── utils.ts                # Helper functions
