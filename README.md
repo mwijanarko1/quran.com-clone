@@ -247,3 +247,6 @@ For questions, suggestions, or issues:
 ---
 
 **Note**: This is an independent project not affiliated with Quran.com or Quran.Foundation. It aims to provide similar functionality as a free, open-source alternative.
+
+> "Indeed, We have sent it down as an Arabic Qur'an so that you might understand."  
+> **Quran 12:2**

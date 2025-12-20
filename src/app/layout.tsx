@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 // Initialize the Geist font with Latin subset
@@ -64,11 +62,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900 min-h-screen flex flex-col`}
       >
         <TooltipProvider>
-          <Navbar />
-          <main className="pt-16 flex-1">
+          <main className="flex-1">
             {children}
           </main>
-          <Footer />
         </TooltipProvider>
       </body>
     </html>

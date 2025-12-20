@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        arabic: ['KFGQPC HAFS Uthmanic Script', 'serif'],
+        indopak: ['Naskh-Nastaleeq-IndoPak-QWBW', 'serif'],
+      },
       animation: {
         blob: "blob 7s infinite",
       },

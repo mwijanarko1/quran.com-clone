@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import type { ThemeMode, ReadingMode } from "@/types/quran";
+import type { ThemeMode, ReadingMode, ScriptStyle } from "@/types/quran";
 
 interface SettingsDrawerProps {
   onClose: () => void;
@@ -13,12 +13,14 @@ interface SettingsDrawerProps {
 export function SettingsDrawer({ onClose }: SettingsDrawerProps) {
   const [theme, setTheme] = useState<ThemeMode>("auto");
   const [readingMode, setReadingMode] = useState<ReadingMode>("translation");
+  const [scriptStyle, setScriptStyle] = useState<ScriptStyle>("uthmani");
   const [fontSize, setFontSize] = useState<"small" | "medium" | "large">("medium");
   const [showWordByWord, setShowWordByWord] = useState(false);
 
   const handleReset = () => {
     setTheme("auto");
     setReadingMode("translation");
+    setScriptStyle("uthmani");
     setFontSize("medium");
     setShowWordByWord(false);
   };
@@ -80,6 +82,20 @@ export function SettingsDrawer({ onClose }: SettingsDrawerProps) {
                   <SelectItem value="small">Small</SelectItem>
                   <SelectItem value="medium">Medium</SelectItem>
                   <SelectItem value="large">Large</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Script Style */}
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-700">Arabic Script</span>
+              <Select value={scriptStyle} onValueChange={(value: ScriptStyle) => setScriptStyle(value)}>
+                <SelectTrigger className="w-32">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="uthmani">Uthmani</SelectItem>
+                  <SelectItem value="indopak">IndoPak</SelectItem>
                 </SelectContent>
               </Select>
             </div>

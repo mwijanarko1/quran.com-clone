@@ -75,11 +75,13 @@ export type NavigationMode = 'surah' | 'verse' | 'juz' | 'page';
 // Reading preferences
 export type ReadingMode = 'translation' | 'reading';
 export type ThemeMode = 'light' | 'dark' | 'sepia' | 'auto';
+export type ScriptStyle = 'uthmani' | 'indopak';
 
 // Settings types
 export interface UserSettings {
   theme: ThemeMode;
   readingMode: ReadingMode;
+  scriptStyle: ScriptStyle;
   fontSize: 'small' | 'medium' | 'large';
   showWordByWord: boolean;
   selectedTranslation: string;
